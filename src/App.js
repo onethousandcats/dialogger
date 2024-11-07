@@ -1,12 +1,11 @@
-import Circle from "./components/Circle";
-import Row from "./components/Row";
+import Body from "./components/Body";
+import Navigation from "./components/Navigation";
 
 export default () => {
     return (
-        <div>
-            <Row>
-                <Circle /><h1>Dialogger</h1>
-            </Row>
+        <div className="container">
+            <Navigation />
+            <Body />
         </div>
     );
 }

@@ -1,6 +1,30 @@
 body {
     font-family: "Afacad Flux", sans-serif;
     margin: 2em;
+    height: 100vh;
+}
+
+#app {
+    height: 100vh;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 12px;
+}
+
+input {
+    border: none;
+    font-size: 18px;
+
+    &:focus-visible {
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
 }
 
 .circle {
@@ -19,4 +43,43 @@ body {
 
 h1 {
     margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    width: 360px;
+    margin-right: 2em;
+
+    .row {
+        justify-content: center;
+    }
+
+    .options {
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+.app-body {
+    flex: 1;
+    padding: 2em;
+}
+
+.dialogger {
+    font-size: 18px;
+    margin: 2em;
+
+    .row {
+        .line {
+            width: 100%;
+        }
+    }
 }
