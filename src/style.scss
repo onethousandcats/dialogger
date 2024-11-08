@@ -1,3 +1,6 @@
+$black: #000;
+$white: #fff;
+
 body {
     font-family: "Afacad Flux", sans-serif;
     margin: 2em;
@@ -31,7 +34,7 @@ input {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #000;
+    background-color: $black;
 }
 
 .row {
@@ -69,17 +72,60 @@ h1 {
 }
 
 .app-body {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     padding: 2em;
 }
 
+.dialogger::-webkit-scrollbar {
+    display: none;
+}
+
+.fader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    pointer-events: none; 
+}
+
 .dialogger {
+    flex: 1;
     font-size: 18px;
     margin: 2em;
+    margin-bottom: 50%;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+
+    position: relative;
+    scroll-snap-type: y mandatory;
 
     .row {
+        scroll-snap-align: start;
+        margin-top: 4px;
+        padding: 10px;
+
         .line {
             width: 100%;
+        }
+    }
+
+    .row:last-child {
+        background: $black;
+        color: $white;
+
+        input {
+            background-color: $black;
+            color: $white;
         }
     }
 }
